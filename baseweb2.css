@@ -1,0 +1,249 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fffaf4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: #d35400;
+    color: brown;
+    padding: 40px 20px;
+    text-align: center;
+    background-image: url('linear-flat-abstract-lines-pattern_23-2148950145.avif') ;
+  }
+  
+  nav {
+    background: #f39c12;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  nav a:hover{
+    color: #333;
+  }
+  
+  section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+    color: #d35400;
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .menu-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.05);
+    box-shadow:0 4px 8px #f39c12;
+
+  }
+  
+  footer {
+    background: #d35400;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  /* Cube Animation */
+  .cube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    perspective: 1000px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotateCube 10s infinite linear;
+  }
+  
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url('d_y_patil_college_of_engineering__technology_kasaba_bawada_logo.jpg');
+    background-color: rgba(191, 255, 0, 0.9);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #071058ab;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .front  { transform: rotateY(0deg) translateZ(100px); }
+  .back   { transform: rotateY(180deg) translateZ(100px); }
+  .left   { transform: rotateY(-90deg) translateZ(100px); }
+  .right  { transform: rotateY(90deg) translateZ(100px); }
+  .top    { transform: rotateX(90deg) translateZ(100px); }
+  .bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  @keyframes rotateCube {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    25%  { transform: rotateX(0deg) rotateY(90deg);
+        transform: rotateX(0deg) rotateY(180deg) }
+    50%  { transform: rotateX(0deg) rotateY(270deg);
+        transform: rotateX(0deg) rotateY(360deg);}
+    75%  { transform: rotateX(0deg) rotateY(270deg);
+        transform: rotateX(0deg) rotateY(180deg); }
+    100% { transform: rotateX(0deg) rotateY(90deg);
+        transform: rotateX(0deg) rotateY(0deg); }
+  }
+  
+  /* Links in contact */
+  #contact a {
+    color: #d35400;
+    text-decoration: none;
+  }
+  
+  #contact a:hover {
+    text-decoration: underline;
+  }
+
+  .cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: #f39c12;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #cart-count {
+    background: red;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  .cart-dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    color: #333;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+  }
+  
+  .cart-icon:hover .cart-dropdown {
+    display: block;
+  }
+  
+  .cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .cart-dropdown li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .cart-dropdown button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .cart-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .cart-buttons button {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #clear-cart {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #clear-cart:hover {
+    background-color: #c0392b;
+  }
+  
+  #place-order {
+    background-color: #27ae60;
+    color: white;
+  }
+  
+  #place-order:hover {
+    background-color: #1e8449;
+  }
+
+  footer p {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .menu-item:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
