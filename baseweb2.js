@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("clear-cart").addEventListener("click", clearCart);
 
-  document.getElementById("Check Out").addEventListener("click", () => {
+  document.getElementById("Check-Out").addEventListener("click", () => {
   if (cart.length === 0) {
     alert("Your cart is empty!");
     return;
