@@ -45,24 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("clear-cart").addEventListener("click", clearCart);
 
   document.getElementById("pay-now").addEventListener("click", () => {
-    if (cart.length === 0) {
-      alert("Your cart is empty!");
-      return;
-    }
-  
-    const phoneNumber = "918446451415";
-    const orderDetails = cart.map(item => `• ${item.name} - ₹${item.price}`).join("\n");
-    const message = encodeURIComponent(
-      `Hello! I’d like to pre-order the following:\n\n${orderDetails}\n\nTotal: ₹${total}\n\nFrom: DYPCET Canteen Pre-Order 🍽️`
-    );
-  
-    // Step 1: Trigger UPI Payment
-    const upiLink = `upi://pay?pa=atharvkodolkar@okhdfcbank&pn=DYPCET%20Canteen&am=${total}&cu=INR`;
-    window.location.href = upiLink;
-  
-    // Step 2: After 5 seconds, open WhatsApp
-    setTimeout(() => {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  const phoneNumber = "918446451415";
+  const orderDetails = cart.map(item => `• ${item.name} - ₹${item.price}`).join("\n");
+  const message = encodeURIComponent(
+    `Hello! I’d like to pre-order the following:\n\n${orderDetails}\n\nTotal: ₹${total}\n\nFrom: DYPCET Canteen Pre-Order 🍽️`
+  );
+
+  const upiLink = `upi://pay?pa=atharvkodolkar@okhdfcbank&pn=DYPCET%20Canteen&am=${total}&cu=INR`;
+  window.location.href = upiLink;
+
+  // Show WhatsApp button after 2 seconds (optional delay)
+  setTimeout(() => {
+    const whatsappBtn = document.getElementById("whatsapp-order");
+    whatsappBtn.style.display = "inline-block";
+
+    whatsappBtn.onclick = () => {
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-    }, 5000);
-  });  
+    };
+  }, 2000);
+});
+  
 });
